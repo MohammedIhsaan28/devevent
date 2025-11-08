@@ -8,6 +8,7 @@ interface Props{
     date:string;
     time:string;
 }
+
 export default function EventCard({title,image,slug,location,date,time}:Props){
     return(
         <Link href={`/events/${slug}`} id='event-card'>
