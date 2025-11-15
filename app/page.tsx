@@ -2,7 +2,7 @@ import EventCard from "@/components/EventCard";
 import ExploreBtn from "@/components/ExploreBtn";
 import { IEvent } from "@/database";
 import { cacheLife } from "next/cache";
-import events from '@/lib/constants';
+
 
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
@@ -10,8 +10,8 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 export default async function Home() {
   'use cache'  // First time using 'use cache' for data fetching
   cacheLife('hours');
-  // const res = await fetch(`${BASE_URL}/api/events`);
-  // const {events} = await res.json();
+  const res = await fetch(`${BASE_URL}/api/events`);
+  const {events} = await res.json();
 
 
   return (
